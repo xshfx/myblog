@@ -1,0 +1,41 @@
+<extend name="Index/base" />
+	<block name="content">	
+		<div class="right">
+			<ul>
+				<li><a href="__MODULE__/Article/index">我的文章</a></li>
+				<li><a href="__MODULE__/Article/add">写文章</a></li>
+				<li><a href="__MODULE__/Article/edit">草稿箱</a></li>
+			</ul>
+			
+			<!-- <div style="clear:both;"></div> -->
+			<div class="right-content">
+				<form action="__URL__/add" method="post">
+					<div>
+						标题：<br />
+						<input type="text" name="title" required />
+					</div>
+					<div>
+						内容：<br />
+						<!-- 加载编辑器的容器 -->
+						<script id="container" name="content" type="text/plain">
+							
+						</script>
+    				</div>
+					<div>
+						<input type="submit" value="发布" />
+						<input type="reset" value="取消" />
+					</div>
+				</form>
+			</div>
+				
+		</div>
+		<!-- 配置文件 -->
+		<script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.config.js"></script>
+	    <!-- 编辑器源码文件 -->
+	    <script type="text/javascript" src="__PUBLIC__/ueditor/ueditor.all.js"></script>
+	    <!-- 实例化编辑器 -->
+	    <script type="text/javascript">
+	        var ue = UE.getEditor('container');
+	        
+	    </script>
+	</block>

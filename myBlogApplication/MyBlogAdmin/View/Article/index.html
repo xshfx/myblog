@@ -1,0 +1,48 @@
+<extend name="Index/base" />
+	<block name="content">	
+		<div class="right">
+			<ul>
+				<li><a href="__MODULE__/Article/index">我的文章</a></li>
+				<li><a href="__MODULE__/Article/add">写文章</a></li>
+				<li><a href="__MODULE__/Article/edit">草稿箱</a></li>
+			</ul>
+			
+			<!-- <div style="clear:both;"></div> -->
+			<div class="right-content">
+				<table>
+					<foreach name='list' item="vo">
+						<tr>
+							<td><input type="checkbox" id="id" value="{$vo.id}"></td>
+							<td>{$vo.title}</td>
+							<td>{$vo.addtime|date="Y-m-d H:i:s",###}</td>
+							<td>
+								<if condition="$vo.num eq 0">(0)
+								<else/>({$vo.num})
+								</if>
+							</td>
+							<td>
+								<a href="__URL__/edit/id/{$vo.id}">编辑</a>
+								<a href="#" onclick="del(this,{$vo.id})">删除</a>
+							</td>
+						</tr>
+					</foreach>
+				</table>				
+			</div>
+			<script>
+				function del(obj,id){
+					// alert(id);
+					$.ajax({
+						url: "__URL__/del",
+						type:"get",
+						data:"id="+id,
+						success:function(data){
+
+							console.dir(data);
+							alert('删除成功');
+							$(obj).parents('tr').remove();
+						}
+					})
+				}
+			</script>
+		</div>
+	</block>

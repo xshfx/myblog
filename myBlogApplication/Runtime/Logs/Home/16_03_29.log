@@ -1,0 +1,20 @@
+[ 2016-03-29T17:21:57+08:00 ] 127.0.0.1 /myBlog/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000111s ]
+INFO: [ app_init ] --END-- [ RunTime:0.004736s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.005354s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.005875s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000616s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001106s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.109247s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.109746s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.008321s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.008792s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.004729s ]
+INFO: [ app_end ] --END-- [ RunTime:0.005184s ]
+
